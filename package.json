@@ -1,0 +1,24 @@
+{
+  "name": "bootcamptodolist",
+  "version": "1.0.0",
+  "description": "A full stack MERN application for Milestone Project 2 of the NCSU Software Dev Bootcamp.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DrakeOwenIO/BootcampToDoList.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DrakeOwenIO/BootcampToDoList/issues"
+  },
+  "homepage": "https://github.com/DrakeOwenIO/BootcampToDoList#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
