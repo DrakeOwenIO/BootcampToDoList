@@ -6,7 +6,7 @@ const app = express();
 
 // GET ROUTE
 app.get("/api", (req, res) => {
-    res.json({ message: "Hello from server!, Im running"});
+    res.json({ message: "Hello from server! Im running"});
     
   });
   
