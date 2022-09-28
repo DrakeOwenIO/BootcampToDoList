@@ -37,7 +37,7 @@ router.post('/', (req, res) => {
     res.render('lists/new')
 })
 
-router.get('/:id', (req, res) => {
+  router.get('/:id', (req, res) => {
     db.Lists.findById(req.params.id)
     .populate('lists')
     .then(lists => {
