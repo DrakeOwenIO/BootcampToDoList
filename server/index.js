@@ -17,7 +17,7 @@ app.set('view engine', 'js')
 app.engine('js', require('express-react-views').createEngine())
 
 // ROUTE
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
     res.json({ message: "Your To Do List"});
   });
   
