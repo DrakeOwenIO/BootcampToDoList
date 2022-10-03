@@ -3,7 +3,6 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 
-window.onload = () => {
 	const form1 = document.querySelector("#addForm");
 
 	let items = document.getElementById("items");
@@ -13,7 +12,6 @@ window.onload = () => {
 
 	form1.addEventListener("submit", addItem);
 	items.addEventListener("click", removeItem);
-};
 
 function addItem(e) {
 	e.preventDefault();
