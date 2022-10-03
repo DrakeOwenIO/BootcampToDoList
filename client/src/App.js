@@ -18,13 +18,13 @@ window.onload = () => {
 function addItem(e) {
 	e.preventDefault();
 
-	if (submit.value != "Submit") {
+	if (submit.value != "submit") {
 		console.log("Hello");
 
 		editItem.target.parentNode.childNodes[0].data
 			= document.getElementById("item").value;
 
-		submit.value = "Submit";
+		submit.value = "submit";
 		document.getElementById("item").value = "";
 
 		document.getElementById("lblsuccess").innerHTML

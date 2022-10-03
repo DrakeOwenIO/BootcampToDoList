@@ -1,5 +1,5 @@
 const router = require('express').Router()
-// const db = require('')
+const db = require('')
 
 router.get('/', (req, res) => {
     db.Lists.find()
