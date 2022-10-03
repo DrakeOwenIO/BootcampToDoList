@@ -62,7 +62,7 @@ function addItem(e) {
 	editButton.className =
 			"btn-success btn btn-sm float-right edit";
 
-	editButton.appendChild(document.createTextNode("Edit"));
+	editButton.appendChild(document.createTextNode("edit"));
 
 	li.appendChild(document.createTextNode(newItem));
 	li.appendChild(deleteButton);
@@ -92,7 +92,7 @@ function removeItem(e) {
 	if (e.target.classList.contains("edit")) {
 		document.getElementById("item").value =
 			e.target.parentNode.childNodes[0].data;
-		submit.value = "EDIT";
+		submit.value = "edit";
 		editItem = e;
 	}
 }
