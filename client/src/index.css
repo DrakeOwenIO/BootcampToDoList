@@ -124,6 +124,6 @@ body {
     color:#fff
 }
 
-#form{
-  background-color: #444;
+.item{
+  background-color: rgb(215, 10, 10);
 }
