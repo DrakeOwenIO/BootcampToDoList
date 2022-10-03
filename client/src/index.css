@@ -124,6 +124,73 @@ body {
     color:#fff
 }
 
-.item{
-  background-color: rgb(215, 10, 10);
+#item{
+  border-color:rgb(18, 17, 17);
+  border-width:thick;
+  background-color: rgb(137, 187, 187);
 }
+
+h1{
+  text-align: center;
+  color:rgb(208, 70, 54);
+  border-width:thick;
+}
+
+span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: block;
+  color: #d50b0b;
+  font-size: 75px;
+  letter-spacing: 8px;
+  cursor: pointer;
+}
+
+span::before {
+  content: "To Do List";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    45deg,
+    transparent 0,
+    transparent 2px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0;
+  z-index: -1;
+  transition: 1s;
+}
+
+span::after {
+  content: "To Do List";
+  position: absolute;
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    135deg,
+    transparent 0,
+    transparent 2px,
+    white 2px,
+    white 4px
+  );
+  -webkit-background-clip: text;
+  top: 0px;
+  left: 0px;
+  transition: 1s;
+}
+
+span:hover:before {
+  top: 10px;
+  left: 10px;
+}
+
+span:hover:after {
+  top: -10px;
+  left: -10px;
+} 
+
+
