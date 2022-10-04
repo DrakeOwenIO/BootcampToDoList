@@ -3,9 +3,23 @@ require('dotenv').config()
 const express = require('express')
 const app = express()
 const methodOverride = require('method-override')
+const conn_str = "mongodb+srv://Drake:MonGodB3@todolist.pggfoz9.mongodb.net/?retryWrites=true&w=majority"
 
 // Requiring some parsing stuff
 var bodyParser = require('body-parser')
+
+// Connect to Mongo
+mongoose.connect(
+  conn_str,
+  { 
+  useNewUrlParser: true, 
+  useUnifiedTopology: true 
+  },(err) => {
+  if (err) {
+  console.log("error in connection");
+  } else {
+  console.log("mongodb is connected");
+  }});
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
@@ -26,9 +40,6 @@ app.get("/api", (req, res) => {
   const listsController = require ('./controller/lists_controller.js')
 app.use('/lists', listsController)
 
-mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
-  () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
-)
 
 // PORT
 app.listen(process.env.PORT)
