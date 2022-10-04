@@ -1,16 +1,11 @@
-const express = require("express");
 const mongoose = require('mongoose')
+require('dotenv').config()
+const express = require('express')
+const app = express()
+const methodOverride = require('method-override')
 
 // Requiring some parsing stuff
 var bodyParser = require('body-parser')
-
-// Require and config env file
-require('dotenv').config()
-const PORT = process.env.PORT || 3001;
-const app = express();
-
-// DEPENDENCIES
-const methodOverride = require('method-override')
 
 // MIDDLEWARE
 app.use(methodOverride('_method'))
@@ -21,17 +16,19 @@ app.set('views', __dirname + '/views')
 app.set('view engine', 'js')
 app.engine('js', require('express-react-views').createEngine())
 
-
 // ROUTE
+app.use('/ToDoList', require('./controller/lists_controller'))
+
 app.get("/api", (req, res) => {
     res.json({ message: "Your To Do List"});
   });
-  
-// lists
-const listsController = require ('./controller/lists_controller.js')
+
+  const listsController = require ('./controller/lists_controller.js')
 app.use('/lists', listsController)
 
+mongoose.connect(process.env.MONGO_URI, {useNewUrlParser: true, useUnifiedTopology: true}, 
+  () => { console.log('connected to mongo: ', process.env.MONGO_URI) }
+)
+
 // PORT
-app.listen(PORT, () => {
-    console.log(`Server listening on ${PORT}`);
-  });
+app.listen(process.env.PORT)
