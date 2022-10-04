@@ -95,11 +95,11 @@ function removeItem(e) {
 	}
 }
 
-// function toggleButton(ref, btnID) {
-// 	document.getElementById(btnID).disabled = false;
-// }
+function toggleButton(ref, btnID) {
+	document.getElementById(btnID).disabled = false;
+}
 
   
 
 
-export default App;
+export default addItem; removeItem; toggleButton;
