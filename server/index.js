@@ -3,7 +3,7 @@ const express = require("express");
 const app = express();
 const cors = require('cors');
 const taskModel = require('./models/taskModel')
-const conn_str = "mongodb+srv://Drake:MonGodB3@todolist.pggfoz9.mongodb.net/?retryWrites=true&w=majority"
+const conn_str = "mongodb+srv://mikedb:dbtdl@cluster0.nj4mbbl.mongodb.net/?retryWrites=true&w=majority"
 
 // Connect to Mongo
 mongoose.connect(
