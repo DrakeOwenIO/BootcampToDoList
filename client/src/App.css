@@ -10,18 +10,3 @@
   max-width: 1000px;
   margin: auto;
 }
-
-.heading {
-  text-align: center;
-  font-family: Arial, Helvetica, sans-serif;
-  margin-top: 2rem;
-}
-
-.heading h1 {
-  font-size: 3rem;
-}
-
-.todoItem {
-  font-size: 1rem;
-  margin: 4rem;
-}

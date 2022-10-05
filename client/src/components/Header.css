@@ -1,0 +1,15 @@
+.heading {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 2rem;
+  }
+  
+.heading h1 {
+    font-size: 3rem;
+}
+
+.italic{
+    font-style: italic;
+    color: #CC0000;
+}
+

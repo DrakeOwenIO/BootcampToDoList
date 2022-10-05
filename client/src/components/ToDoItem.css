@@ -1,0 +1,13 @@
+.todoItem {
+    font-size: 1rem;
+    margin: 4rem;
+  }
+
+.todoItem h1{
+    background: #cc000c;
+}
+
+.todoItem h1:hover{
+    cursor: pointer;
+    color: black;
+}
