@@ -15,7 +15,7 @@ function App() {
   // Calls the get route to show tasks already in the database
   useEffect(() => {
     const getTodos = async () => {
-      const res = await axios.get('http://localhost:3001/tasks');
+      const res = await axios.get('http://localhost:3000/tasks');
       setTodos(res.data);
     }
     getTodos();
@@ -23,7 +23,7 @@ function App() {
 
   // Creates a new task
   const createTodo = async (text) => {
-    const res = await axios.post('http://localhost:3001/task', {name: text})
+    const res = await axios.post('http://localhost:3000/task', {name: text})
     setTodos(res.data);
   };
 
