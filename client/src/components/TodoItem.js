@@ -4,7 +4,7 @@ const TodoItem = ({todo}) => {
     return(
         <div className="todoItem">
             <h1>{todo.name}</h1>
-            <p>{todo._id}</p>
+            <p>ID: {todo._id}</p>
         </div>
     )
 };

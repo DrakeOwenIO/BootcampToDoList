@@ -22,7 +22,10 @@
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "express": "^4.18.1",
+    "i": "^0.3.7",
     "mongoose": "^6.6.4",
+    "npm": "^8.19.2",
+    "reduct": "^3.3.1",
     "uuid": "^9.0.0"
   },
   "devDependencies": {

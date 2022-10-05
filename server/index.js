@@ -24,7 +24,7 @@ const PORT = process.env.PORT || 3001;
 app.use(express.json({extended: false}));
 app.use(cors());
 
-// GET ROUTE
+// GET
 app.get("/tasks", async (request, response) => {
   const tasks = await taskModel.find({});
   try {
@@ -34,7 +34,7 @@ app.get("/tasks", async (request, response) => {
   }
 });
  
-//POST  
+// POST  
 app.post("/task", async (request, response) => {
   const task = new taskModel(request.body);
   try {
@@ -44,6 +44,29 @@ app.post("/task", async (request, response) => {
     response.status(500).send(error);
   }
   });
+
+// UPDATE
+app.patch("/task/:id", async (request, response) => {
+  try {
+    await taskModel.findByIdAndUpdate(request.params.id, request.body);
+    await taskModel.save();
+    response.send(task);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+
+// DELETE
+app.delete("/task/:id", async (request, response) => {
+  try {
+    const task = await taskModel.findByIdAndDelete(request.params.id);
+
+    if (!task) response.status(404).send("No task found");
+    response.status(200).send();
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
  
 // PORT
 app.listen(PORT, () => {
