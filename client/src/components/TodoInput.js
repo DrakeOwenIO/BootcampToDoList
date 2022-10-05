@@ -12,7 +12,7 @@ const TodoInput = ({ createToDo }) => {
 
     return(
         <form onSubmit={handleSubmit}>
-            <input type="text" ref={todoInput}/>
+            <input type="text" ref={todoInput} required/>
             <input type="submit"/>
         </form>
     )
