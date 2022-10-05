@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 const { Schema } = mongoose
 
-const ToDoListSchema = new Schema({
-    name: { type: String, required: true },
+const ToDoListSchema = new mongoose.Schema({
+    name: { type: String }
 })
 
 const ToDoList = mongoose.model('ToDoList', ToDoListSchema)

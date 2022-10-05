@@ -1,12 +1,9 @@
 const mongoose = require('mongoose')
-require('dotenv').config()
-const express = require('express')
-const app = express()
-const methodOverride = require('method-override')
+const express = require("express");
+const app = express();
+const cors = require('cors');
+const taskModel = require('./models/taskModel')
 const conn_str = "mongodb+srv://Drake:MonGodB3@todolist.pggfoz9.mongodb.net/?retryWrites=true&w=majority"
-
-// Requiring some parsing stuff
-var bodyParser = require('body-parser')
 
 // Connect to Mongo
 mongoose.connect(
@@ -21,25 +18,34 @@ mongoose.connect(
   console.log("mongodb is connected");
   }});
 
+const PORT = process.env.PORT || 3001;
+
 // MIDDLEWARE
-app.use(methodOverride('_method'))
-app.use(express.urlencoded({extended: true})) // to support URL-encoded bodies
-app.use(express.json());       // to support JSON-encoded bodies
-app.use(express.static('public'))
-app.set('views', __dirname + '/views')
-app.set('view engine', 'js')
-app.engine('js', require('express-react-views').createEngine())
+app.use(express.json({extended: false}));
+app.use(cors());
 
-// ROUTE
-app.use('/ToDoList', require('./controller/lists_controller'))
-
-app.get("/api", (req, res) => {
-    res.json({ message: "Your To Do List"});
+// GET ROUTE
+app.get("/tasks", async (request, response) => {
+  const tasks = await taskModel.find({});
+  try {
+    response.send(tasks);
+  } catch (error) {
+    response.status(500).send(error);
+  }
+});
+ 
+//POST  
+app.post("/task", async (request, response) => {
+  const task = new taskModel(request.body);
+  try {
+    await task.save();
+    response.send.json(task);
+  } catch (error) {
+    response.status(500).send(error);
+  }
   });
-
-  const listsController = require ('./controller/lists_controller.js')
-app.use('/lists', listsController)
-
-
+ 
 // PORT
-app.listen(process.env.PORT)
+app.listen(PORT, () => {
+    console.log(`Server listening on ${PORT}`);
+  });

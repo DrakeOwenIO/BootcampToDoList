@@ -1,4 +1,0 @@
-To Do List App
-------------
-- Be able to add, delete, edit and check off different types of tasks
-- Have the ablity to create different types of lists | Shopping list, grocery list, task list, etc...
