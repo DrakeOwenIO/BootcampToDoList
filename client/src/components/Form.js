@@ -21,4 +21,4 @@ form.addEventListener("submit", function(event) {
     .catch(/**/);
 });
 
-export default TodoInput;
+export default Form;
