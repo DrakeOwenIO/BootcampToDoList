@@ -6,7 +6,7 @@ import axios from 'axios';
 import Todos from './components/Todos';
 import Preloader from './components/Preloader';
 import Header from './components/Header';
-import TodoInput from './components/TodoInput';
+import Form from './components/Form';
 
 function App() {
 
@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <div className='container'>
         <Header />
-        <TodoInput createToDo={createTodo}/>
+        <Form createToDo={createTodo}/>
         {todos ? <Todos todos={todos}/> : <Preloader />}
       </div>
 
