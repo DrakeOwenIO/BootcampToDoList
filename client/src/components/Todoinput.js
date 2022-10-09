@@ -1,26 +1,22 @@
 import React, {useRef} from 'react';
 import './ToDoInput.css'
 
-const Form = ({ createToDo }) => {
-    const todoInput = useRef('')
+const TodoInput = ({ createToDo }) => {
+  const todoInput = useRef('')
 
-    Form.addEventListener("submit", function(event) {
-        event.preventDefault();
-        const formData = new FormData(this);
-        const entries = formData.entries();
-        const data = Object.fromEntries(entries);
-      
-        // send out to a REST API
-        fetch("https://some.endpoint.dev", {
-          method: "POST",
-          body: JSON.stringify(data),
-          headers: {
-            "Content-Type": "application/json"
-          }
-        })
-          .then(/**/)
-          .catch(/**/);
-      })
-    }
+  const handleSubmit = (e) => {
+      e.preventDefault()
+      createToDo(todoInput.current.value)
+      todoInput.current.value = ""
+      window.location.reload();
+  }
 
-export default Form;
+  return(
+      <form onSubmit={handleSubmit}>
+          <input type="text" ref={todoInput} required className='input'/>
+          <input type="submit" className='submitBtn'/>
+      </form>
+  )
+}
+
+export default TodoInput;
