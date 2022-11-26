@@ -6,8 +6,8 @@ const TodoInput = ({ createToDo }) => {
 
   const handleSubmit = (e) => {
       e.preventDefault()
-      createToDo(todoInput.current.value)
-      todoInput.current.value = ""
+      createToDo(todoInput.current.valueOf)
+      todoInput.current.valueOf = ""
       window.location.reload();
   }
 
