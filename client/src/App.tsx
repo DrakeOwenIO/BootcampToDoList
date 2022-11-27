@@ -1,12 +1,4 @@
-import {useState, useEffect} from 'react'
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import axios from 'axios';
-import Todos from './components/Todos';
-import Preloader from './components/Preloader';
-import Header from './components/Header';
-import Form from './components/Todoinput';
 
 function App() {
 
